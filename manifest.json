@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Copy yt-dlp command",
+  "description": "Adds a button on YouTube that copies a yt-dlp command to the clipboard.",
+  "version": "1.0.0",
+
+  "action": { "default_title": "yt-dlp copy" },
+
+  "permissions": ["clipboardWrite"],
+  "host_permissions": ["https://www.youtube.com/*","https://music.youtube.com/*"],
+
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/watch*","https://music.youtube.com/watch*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "icons": { "32": "icons/32.png" }
+}
